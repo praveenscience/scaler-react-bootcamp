@@ -1,10 +1,14 @@
 import React, { Component } from "react";
+import Header from "./Bootstrap/Header";
 
 class App extends Component {
+  state = {
+    Dark: false
+  };
   render() {
     return (
       <div className="App">
-        <h1>Hello Scaler</h1>
+        <Header dark={this.state.Dark}>Scaler Portfolio Generator Lite</Header>
       </div>
     );
   }
