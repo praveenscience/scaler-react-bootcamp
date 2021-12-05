@@ -8,8 +8,23 @@ const Code = ({
   LastName,
   Address,
   Phone,
-  Email
+  Email,
+  Socials,
+  Experience,
+  Education,
+  Skills,
+  Interests,
+  Awards
 }) => {
+  const Meta = {
+    Facebook: ["facebook-f", "https://fb.me/"],
+    WhatsApp: ["whatsapp", "https://wa.me/"],
+    Instagram: ["instagram", "https://instagr.am/"],
+    Twitter: ["twitter", "https://twitter.com/"],
+    LinkedIn: ["linkedin-in", "https://linkedin.com/in/"],
+    GitHub: ["github", "https://github.com/"],
+    StackOverflow: ["stack-overflow", "https://stackoverlow.com/u/"]
+  };
   return (
     <div className="Code">
       <pre className="border rounded bg-light p-3">{`<!DOCTYPE html>
@@ -76,10 +91,11 @@ const Code = ({
           </div>
           <p class="lead mb-5">${Description}</p>
           <div class="social-icons">
-            <a class="social-icon" href="#!"><i class="fab fa-linkedin-in"></i></a>
-            <a class="social-icon" href="#!"><i class="fab fa-github"></i></a>
-            <a class="social-icon" href="#!"><i class="fab fa-twitter"></i></a>
-            <a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a>
+            ${Object.keys(Socials).map(
+              soc =>
+                `<a class="social-icon" href="${Meta[soc][1]}${Socials[soc]}"><i class="fab fa-${Meta[soc][0]}"></i></a>`
+            ).join(`
+            `)}
           </div>
         </div>
       </section>
