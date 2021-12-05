@@ -1,4 +1,6 @@
 import FormGroup from "./Bootstrap/FormGroup";
+import Education from "./Form/Education";
+import Experience from "./Form/Experience";
 
 const Form = ({ FormData, onChange }) => {
   const Desc = {
@@ -43,6 +45,7 @@ const Form = ({ FormData, onChange }) => {
   };
   return (
     <div className="Form">
+      <h3>Basic Info</h3>
       {Object.keys(FormData).map(
         fd =>
           Object.keys(Desc).includes(fd) && (
@@ -59,6 +62,22 @@ const Form = ({ FormData, onChange }) => {
             />
           )
       )}
+      <h3>Experience</h3>
+      <Experience Experiences={FormData.Experience} />
+      <h3>Education</h3>
+      <Education Educations={FormData.Education} />
+      <h3>Skills</h3>
+      <pre className="border rounded bg-light p-2">
+        {JSON.stringify(FormData.Skills, null, 2)}
+      </pre>
+      <h3>Interests</h3>
+      <pre className="border rounded bg-light p-2">
+        {JSON.stringify(FormData.Interests, null, 2)}
+      </pre>
+      <h3>Awards</h3>
+      <pre className="border rounded bg-light p-2">
+        {JSON.stringify(FormData.Awards, null, 2)}
+      </pre>
     </div>
   );
 };
