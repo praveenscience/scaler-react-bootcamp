@@ -2,7 +2,11 @@ import FormGroup from "./Bootstrap/FormGroup";
 
 const Form = ({ FormData, onChange }) => {
   const Desc = {
-    FullName: ["text", "Full Name", "This is your full name."],
+    FullName: [
+      "text",
+      "Full Name",
+      "This is your full name. This has been generated from your first and last names."
+    ],
     FirstName: [
       "text",
       "First Name",
@@ -49,6 +53,7 @@ const Form = ({ FormData, onChange }) => {
           Value={FormData[fd]}
           Placeholder={`Enter something for ${Desc[fd][1]}`}
           onChange={fd === "FullName" ? () => {} : onChange}
+          readOnly={fd === "FullName" ? true : undefined}
         />
       ))}
     </div>
