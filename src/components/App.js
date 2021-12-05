@@ -23,6 +23,14 @@ class App extends Component {
       Dark: !this.state.Dark
     });
   };
+  handleChange = e => {
+    this.setState({
+      FormData: {
+        ...this.state.FormData,
+        [e.target.name]: e.target.value
+      }
+    });
+  };
   render() {
     return (
       <div className="App">
@@ -45,6 +53,7 @@ class App extends Component {
                   FullName: `${this.state.FormData.FirstName} ${this.state.FormData.LastName}`,
                   ...this.state.FormData
                 }}
+                onChange={this.handleChange}
               />
             </div>
             <div className="col-12 col-sm-6">
