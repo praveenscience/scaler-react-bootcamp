@@ -17,6 +17,15 @@ class App extends Component {
       Address: "Chennai, Tamil Nadu, India",
       Phone: "+919841098410",
       Email: "kavitha@kavitha.com",
+      Socials: {
+        Facebook: "kavitha",
+        WhatsApp: "kavitha",
+        Instagram: "kavitha",
+        Twitter: "kavitha",
+        LinkedIn: "kavitha",
+        GitHub: "kavitha",
+        StackOverflow: "123456"
+      },
       Experience: [
         {
           Role: "Awesome Developer",
