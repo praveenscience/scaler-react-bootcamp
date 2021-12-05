@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Header from "./Bootstrap/Header";
+import Code from "./Code";
+import Form from "./Form";
 
 class App extends Component {
   state = {
@@ -26,8 +28,12 @@ class App extends Component {
         </Header>
         <div className="container-fluid">
           <div className="row">
-            <div className="col-12 col-sm-6">Form</div>
-            <div className="col-12 col-sm-6">Code</div>
+            <div className="col-12 col-sm-6">
+              <Form />
+            </div>
+            <div className="col-12 col-sm-6">
+              <Code />
+            </div>
           </div>
         </div>
       </div>
